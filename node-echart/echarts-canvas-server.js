@@ -93,6 +93,14 @@ const server = http.createServer(function (request, response) {
     });
 });
 
+server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.log(`Port ${port} is already in use`);
+    } else {
+        console.log(err);
+    }
+});
+
 server.listen(port, hostName, function () {
     console.log(`server started at port ${port}`);
 });
