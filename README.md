@@ -4,4 +4,5 @@ echart demo
 
 ## node-echart
 - [node-echart](./node-echart) 如何用node生成echart，以及使用pkg打包node成exe
+[图片效果](./node-echart/demo.png)
 
