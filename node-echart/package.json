@@ -1,0 +1,35 @@
+{
+  "name": "imgtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "./echarts-canvas-server.js",
+  "pkg": {
+    "assets": [
+      "node_modules/canvas/*",
+      "node_modules/echarts/*",
+      "views/**/*",
+      "public/**/*"
+    ],
+    "scripts": "./echarts-canvas-server.js",
+    "targets": [
+      "node16"
+    ],
+    "outputPath": "dist/server.exe"
+    
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node canvas.js",
+    "prod": "node node-echarts-canvas.js",
+    "prod-echart": "node echarts-canvas.js",
+    "pkg": "pkg . --out-path=dist/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "echarts": "^5.5.0"
+    ,"node-echarts-canvas": "^1.2.6"
+  }
+}
