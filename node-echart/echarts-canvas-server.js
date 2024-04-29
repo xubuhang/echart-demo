@@ -93,14 +93,32 @@ const server = http.createServer(function (request, response) {
     });
 });
 
-server.on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-        console.log(`Port ${port} is already in use`);
-    } else {
-        console.log(err);
-    }
-});
 
-server.listen(port, hostName, function () {
-    console.log(`server started at port ${port}`);
-});
+
+// 处理端口占用情况
+function startServer(port) {
+    server.listen(port, hostName, function () {
+        console.log(`server started at port ${port}`);
+    });
+
+    server.on('error', (err) => {
+        if (err.code === 'EADDRINUSE') {
+            console.log(`%c端口${port} 已占用！`, "color: red")
+            console.log(`%c请先修改appConfig.json的port！`, "color: red")
+            console.log(`程序即将关闭...`)
+            sleep(8000); //暂停8秒
+        } else {
+            console.log(err);
+        }
+    });
+}
+function sleep(d){
+    for(var t = Date.now();Date.now() - t <= d;){
+       
+    };
+  }
+  
+ 
+startServer(port);
+
+
