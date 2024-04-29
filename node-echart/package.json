@@ -6,8 +6,7 @@
   "bin": "./echarts-canvas-server.js",
   "pkg": {
     "assets": [
-      "node_modules/canvas/*",
-      "node_modules/echarts/*",
+      "node_modules/canvas/build/Release/canvas.node",
       "views/**/*",
       "public/**/*"
     ],
